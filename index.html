@@ -38,6 +38,7 @@
         function setList() {
             var data = document.getElementById('totalList').value;
             var elem = document.getElementById('list');
+            elem.innerHTML = '';
             var arr = [];
             for (var i = 0; i < data; i++) {
                 (function (i) {
