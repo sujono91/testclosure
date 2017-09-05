@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container__list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .container__list>li {
+            background-color: #7ce9c8;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h2>Learn Closure</h2>
+    <input type="number" id="totalList" min="0" max="100" />
+    <button onclick="setList()">Submit</button>
+    <ul class="container__list" id="list">
+    </ul>
+    <script>
+        function setList() {
+            var data = document.getElementById('totalList').value;
+            var elem = document.getElementById('list');
+            var arr = [];
+            for (var i = 0; i < data; i++) {
+                (function (i) {
+                    arr[i] = function () {
+                        return i;
+                    }
+                })(i)
+            }
+
+            arr.forEach(function (result) {
+                elem.innerHTML += '<li>' + (result() + 1) + '</li>';
+            });
+        }
+    </script>
+</body>
+
+</html>
