@@ -16,4 +16,4 @@ The reason why i write this code is:
     }
 ```
 
-This code will make a diffrent result than before (it will print latest i value on each list).Ï
+This code will make a diffrent result than before (it will print latest i value on each list.
